@@ -6,12 +6,13 @@ function createWindow() {
     const win = new electron.BrowserWindow({
         webPreferences: {
             nodeIntegration: true,
-            contextIsolation: false
+            contextIsolation: false,
+            webviewTag: true
         }
     })
 
     remote.enable(win.webContents);
-    win.webContents.openDevTools();
+    //win.webContents.openDevTools();
     win.loadFile("index.html")
 }
 
